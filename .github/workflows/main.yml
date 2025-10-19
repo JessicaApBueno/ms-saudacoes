@@ -102,7 +102,7 @@ jobs:
       - name: Executar Terraform Apply
         env:
           # Passa o token do Koyeb para o Terraform de forma segura
-          TF_VAR_koyeb_token: ${{ secrets.KOYEB_TOKEN }}
+          KOYEB_TOKEN: ${{ secrets.KOYEB_TOKEN }}
           # Passa o nome completo da imagem Docker (já em minúsculas) para o Terraform
           TF_VAR_docker_image: ${{ env.DOCKER_USER }}/${{ env.SERVICE_NAME }}
         run: |
