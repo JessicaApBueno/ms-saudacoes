@@ -74,7 +74,7 @@ jobs:
       - name: Login no Docker Hub
         uses: docker/login-action@v3
         with:
-          username: ${{ env.DOCKER_USER }}
+          username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
 
       - name: Construir e enviar imagem Docker
@@ -105,7 +105,7 @@ jobs:
           # Passa o token do Koyeb para o Terraform de forma segura
           TF_VAR_koyeb_token: ${{ secrets.KOYEB_TOKEN }}
           # Passa o nome completo da imagem Docker para o Terraform
-          TF_VAR_docker_image: ${{ env.DOCKER_USER }}/${{ env.SERVICE_NAME }}
+          TF_VAR_docker_image: ${{ secrets.DOCKER_USER }}/${{ env.SERVICE_NAME }}
         run: |
           cd infra
           terraform init
