@@ -42,7 +42,7 @@ resource "koyeb_service" "my-service" {
     }
     regions = ["was"]
     docker {
-      image = "${var.docker_image_name}:${var.docker_image_tag}"
+      image = var.docker_image
     }
   }
 
