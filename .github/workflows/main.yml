@@ -110,4 +110,27 @@ jobs:
           terraform init
           terraform validate
           terraform apply --auto-approve
+# ---
 
+  cleanup:
+    name: Destruir Infraestrutura (Manual)
+    needs: deploy
+    runs-on: ubuntu-latest
+    # Esta etapa só roda quando acionada manualmente na aba de Actions
+    if: github.event_name == 'workflow_dispatch' 
+    steps:
+      - name: Checkout do Código
+        uses: actions/checkout@v4
+      
+      - name: Configurar Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Executar Terraform Destroy
+        env:
+          # CORREÇÃO APLICADA AQUI
+          KOYEB_TOKEN: ${{ secrets.KOYEB_TOKEN }}
+          TF_VAR_docker_image: ${{ env.DOCKER_USER }}/${{ env.SERVICE_NAME }}:latest
+        run: |
+          cd infra
+          terraform init
+          terraform destroy --auto-approve
