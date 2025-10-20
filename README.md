@@ -20,6 +20,9 @@ As imagens abaixo ilustram a execução bem-sucedida da pipeline, demonstrando a
 
 <img width="1913" height="354" alt="image" src="https://github.com/user-attachments/assets/4aa5195e-dcf3-47a5-b32b-6b77e42e3864" />
 
+<img width="1362" height="404" alt="image" src="https://github.com/user-attachments/assets/75216732-a164-440e-ad64-d1f68bc29c96" />
+
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
