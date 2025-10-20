@@ -18,13 +18,10 @@ variable "container_port" {
   default = 8080
 }
 
-variable "docker_image_name" {
-  type    = string
-  default = "xxxxxx/ms-saudacoes-aleatorias"
+# ADICIONE ESTA NOVA VARIÁVEL
+variable "docker_image" {
+  description = "The full name of the docker image, including tag."
+  type        = string
 }
 
-variable "docker_image_tag" {
-  type    = string
-  default = "latest"
-}
-  
+
